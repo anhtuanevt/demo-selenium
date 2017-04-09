@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="actions"/>
+	<classpathentry kind="src" path="resources"/>
+	<classpathentry kind="src" path="testcases"/>
+	<classpathentry kind="src" path="interface"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/selenium-java-2.53.0-srcs.jar"/>
+	<classpathentry kind="lib" path="lib/selenium-java-2.53.0.jar"/>
+	<classpathentry kind="lib" path="lib/selenium-server-standalone-2.53.0.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="lib/reportng-1.1.4.jar"/>
+	<classpathentry kind="lib" path="lib/velocity-dep-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/testng-6.9beta.jar"/>
+	<classpathentry kind="lib" path="lib/guice-3.0.jar"/>
+	<classpathentry kind="lib" path="lib/extentreports-2.41.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

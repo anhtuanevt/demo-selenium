@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="LiveGuru99" parallel="false">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="common.MethodListener" />
+	</listeners>
+
+<!-- 	<test name="Run on Firefox"> -->
+<!-- 		<parameter name="browser" value="firefox" /> -->
+<!-- 		<parameter name="url" value="http://demo.guru99.com/V4/index.php" /> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.liveguru99.demo.Demo_01_LiveGuru99" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+
+	<test name="Run on Chrome">
+		<parameter name="browser" value="chrome" />
+		<parameter name="url" value="http://demo.guru99.com/V4/index.php" />
+		<classes>
+			<class name="com.liveguru99.demo.Demo_01_LiveGuru99" />
+		</classes>
+	</test>
+
+<!-- 	<test name="Run on IE"> -->
+<!-- 		<parameter name="browser" value="ie" /> -->
+<!-- 		<parameter name="url" value="http://demo.guru99.com/V4/index.php" /> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.liveguru99.demo.Demo_01_LiveGuru99" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+</suite>

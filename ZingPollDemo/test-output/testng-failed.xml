@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [LiveGuru99]">
+  <parameter name="browser" value="chrome"/>
+  <parameter name="url" value="http://demo.guru99.com/V4/index.php"/>
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="common.MethodListener"/>
+  </listeners>
+  <test name="Run on Chrome">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="url" value="http://demo.guru99.com/V4/index.php"/>
+    <classes>
+      <class name="com.liveguru99.demo.Demo_01_LiveGuru99"/>
+    </classes>
+  </test> <!-- Run on Chrome -->
+</suite> <!-- Failed suite [LiveGuru99] -->

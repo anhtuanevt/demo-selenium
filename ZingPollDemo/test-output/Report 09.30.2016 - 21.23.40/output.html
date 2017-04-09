@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
+<script langauge="JavaScript" type="text/javascript">
+function doMenu(item) {
+ obj=document.getElementById(item);
+ col=document.getElementById("x" + item);
+ if (obj.style.display=="none") {
+  obj.style.display="block";
+  col.innerHTML="[-]";
+ }
+ else {
+  obj.style.display="none";
+  col.innerHTML="[+]";
+ }
+}
+</script>
+<head>
+  <title>Test Results Report - Log Output</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="TestNG unit test results." />
+  <link href="reportng.css" rel="stylesheet" type="text/css" />
+  </head>
+<body>
+  <h1>Log Output</h1>
+  <p>
+    Combined output from all calls to the log methods of the <a href="http://testng.org/javadocs/org/testng/Reporter.html">TestNG Reporter</a>.    
+  </p>
+<a href="JavaScript:doMenu('log');" id=xmain>[+]</a> Steps:
+  <div id="log">
+                  2016-09-30 21:21:17,808 INFO&nbsp; Demo_01_LiveGuru99 - Pre-condition - Step 01: Login to HomePage<br/>
+<br />
+                        2016-09-30 21:21:20,266 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 01: Go to New Customer page<br/>
+<br />
+                        2016-09-30 21:21:23,819 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 02: Input &apos;CUSTOMER NAME&apos;<br/>
+<br />
+                        2016-09-30 21:21:25,167 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 03: Input &apos;DATE OF BIRTH&apos;<br/>
+<br />
+                        2016-09-30 21:21:26,466 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 04: Input &apos;ADDRESS&apos;<br/>
+<br />
+                        2016-09-30 21:21:27,873 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 05: Input &apos;CITY&apos;<br/>
+<br />
+                        2016-09-30 21:21:29,127 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 06: Input &apos;STATE&apos;<br/>
+<br />
+                        2016-09-30 21:21:30,461 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 07: Input &apos;PIN&apos;<br/>
+<br />
+                        2016-09-30 21:21:31,779 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 08: Input &apos;MOBILE&apos;<br/>
+<br />
+                        2016-09-30 21:21:33,121 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 09: Input &apos;EMAIL&apos;<br/>
+<br />
+                        2016-09-30 21:21:34,456 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 10: Input &apos;PASSWORD&apos;<br/>
+<br />
+                        2016-09-30 21:21:35,760 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 11: Select &apos;GENDER&apos;<br/>
+<br />
+                        2016-09-30 21:21:37,270 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 12: Click &apos;SUBMIT&apos; button<br/>
+<br />
+                        2016-09-30 21:21:38,941 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 13: Verify message displays with content &apos;Customer Registered Successfully!!!&apos;<br/>
+<br />
+                        2016-09-30 21:21:39,074 INFO&nbsp; Demo_01_LiveGuru99 - ===PASSED===<br/>
+<br />
+                        2016-09-30 21:21:39,136 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 14: Get value &apos;CUSTOMER ID&apos;<br/>
+<br />
+                        2016-09-30 21:21:39,340 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_002 - Step 01: Go to Edit Customer page<br/>
+<br />
+                        2016-09-30 21:21:42,192 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_002 - Step 02: Input &apos;CUSTOMER NAME&apos;<br/>
+<br />
+                        2016-09-30 21:21:43,562 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_002 - Step 03: Click &apos;SUBMIT&apos; button<br/>
+<br />
+                        2016-09-30 21:21:44,589 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_002 - Step 04: Input &apos;ADDRESS&apos;<br/>
+<br />
+                        2016-09-30 21:21:45,917 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_002 - Step 05: Input &apos;CITY&apos;<br/>
+<br />
+                        2016-09-30 21:21:47,257 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_002 - Step 06: Input &apos;STATE&apos;<br/>
+<br />
+                        2016-09-30 21:21:48,539 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_002 - Step 07: Input &apos;PIN&apos;<br/>
+<br />
+                        2016-09-30 21:21:49,928 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_002 - Step 08: Input &apos;MOBILE&apos;<br/>
+<br />
+                        2016-09-30 21:21:51,233 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_002 - Step 09: Input &apos;EMAIL&apos;<br/>
+<br />
+                        2016-09-30 21:21:52,579 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_002 - Step 10: Click &apos;SUBMIT&apos; button<br/>
+<br />
+                        2016-09-30 21:21:54,131 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_002 - Step 11: Verify message displays with content &apos;Customer details updated Successfully!!!&apos;<br/>
+<br />
+                        2016-09-30 21:21:54,270 INFO&nbsp; Demo_01_LiveGuru99 - ===PASSED===<br/>
+<br />
+                        2016-09-30 21:21:54,273 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_003 - Step 01: Go to New Account page<br/>
+<br />
+                        2016-09-30 21:21:56,933 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_003 - Step 02: Input &apos;CUSTOMER NAME&apos;<br/>
+<br />
+                        2016-09-30 21:21:58,271 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_003 - Step 03: Select &apos;CUSTOMER NAME&apos;<br/>
+<br />
+                        2016-09-30 21:21:58,700 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_003 - Step 04: Input &apos;INITIAL DEPOSIT&apos;<br/>
+<br />
+                        2016-09-30 21:21:59,979 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_003 - Step 05: Click &apos;SUBMIT&apos; button<br/>
+<br />
+                        2016-09-30 21:22:01,534 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_003 - Step 06: Verify message displays with content &apos;Account Generated Successfully!!!&apos;<br/>
+<br />
+                        2016-09-30 21:22:01,691 INFO&nbsp; Demo_01_LiveGuru99 - ===PASSED===<br/>
+<br />
+                        2016-09-30 21:22:01,692 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_003 - Step 07: Get value &apos;ACCOUNT ID&apos;<br/>
+<br />
+                        2016-09-30 21:22:01,894 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_003 - Step 08: Verify &apos;CURRENT AMOUNT&apos; and &apos;INITIAL DEPOSIT&apos; are equal<br/>
+<br />
+                        2016-09-30 21:22:02,090 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_004 - Step 01: Go to Deposit page<br/>
+<br />
+                        2016-09-30 21:22:04,956 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_004 - Step 02: Input &apos;ACCOUNT NUMBER&apos;<br/>
+<br />
+                        2016-09-30 21:22:06,267 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_004 - Step 03: Input &apos;AMOUNT&apos;<br/>
+<br />
+                        2016-09-30 21:22:07,587 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_004 - Step 04: Input &apos;DESCRIPTION&apos;<br/>
+<br />
+                        2016-09-30 21:22:08,986 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_004 - Step 05: Click &apos;SUBMIT&apos; button<br/>
+<br />
+                        2016-09-30 21:22:10,262 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_004 - Step 06: Verify message displays with content &apos;Transaction details of Deposit for Account Number&apos;<br/>
+<br />
+                        2016-09-30 21:22:10,417 INFO&nbsp; Demo_01_LiveGuru99 - ===PASSED===<br/>
+<br />
+                        2016-09-30 21:22:10,417 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_004 - Step 07: Verify &apos;AMOUNT CREDITED&apos; equal 5,000<br/>
+<br />
+                        2016-09-30 21:22:10,610 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_004 - Step 08: Verify &apos;CURRENT BALANCE&apos; equal 55,000<br/>
+<br />
+                        2016-09-30 21:22:10,800 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_005 - Step 01: Go to Withdrawal page<br/>
+<br />
+                        2016-09-30 21:22:13,716 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_005 - Step 02: Input &apos;ACCOUNT NUMBER&apos;<br/>
+<br />
+                        2016-09-30 21:22:15,216 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_005 - Step 03: Input &apos;AMOUNT&apos;<br/>
+<br />
+                        2016-09-30 21:22:16,551 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_005 - Step 04: Input &apos;DESCRIPTION&apos;<br/>
+<br />
+                        2016-09-30 21:22:17,873 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_005 - Step 05: Click &apos;SUBMIT&apos; button<br/>
+<br />
+                        2016-09-30 21:22:19,556 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_005 - Step 06: Verify message displays with content &apos;Transaction details of Withdrawal for Account number&apos;<br/>
+<br />
+                        2016-09-30 21:22:19,739 INFO&nbsp; Demo_01_LiveGuru99 - ===PASSED===<br/>
+<br />
+                        2016-09-30 21:22:19,739 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_005 - Step 07: Verify &apos;AMOUNT CREDITED&apos; equal 15,000<br/>
+<br />
+                        2016-09-30 21:22:20,136 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_005 - Step 08: Verify &apos;CURRENT BALANCE&apos; equal 40,000<br/>
+<br />
+                        2016-09-30 21:22:20,493 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_006 - Step 01: Go to Fund Transfer page<br/>
+<br />
+                        2016-09-30 21:22:23,426 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_006 - Step 02: Input &apos;PAYER ACCOUNT NUMBER&apos;<br/>
+<br />
+                        2016-09-30 21:22:24,743 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_006 - Step 03: Input &apos;PAYEER ACCOUNT NUMBER&apos;<br/>
+<br />
+                        2016-09-30 21:22:26,028 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_006 - Step 04: Input &apos;AMOUNT&apos;<br/>
+<br />
+                        2016-09-30 21:22:27,343 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_006 - Step 05: Input &apos;DESCRIPTION&apos;<br/>
+<br />
+                        2016-09-30 21:22:28,688 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_006 - Step 06: Click &apos;SUBMIT&apos; button<br/>
+<br />
+                        2016-09-30 21:22:30,167 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_006 - Step 07: Verify message displays with content &apos;Fund Transfer Details&apos;<br/>
+<br />
+                        2016-09-30 21:22:44,752 INFO&nbsp; Demo_01_LiveGuru99 - ===FAILED===<br/>
+<br />
+                        2016-09-30 21:22:44,753 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_006 - Step 08: Verify &apos;AMOUNT&apos; equal 10,000<br/>
+<br />
+                        2016-09-30 21:23:31,763 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_007 - Step 01: Go to Balance Enquiry page<br/>
+<br />
+                        2016-09-30 21:23:34,959 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_007 - Step 02: Input &apos;ACCOUNT NUMBER&apos;<br/>
+<br />
+                        2016-09-30 21:23:36,299 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_007 - Step 03: Click &apos;SUBMIT&apos; button<br/>
+<br />
+                        2016-09-30 21:23:39,292 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_007 - Step 04: Verify message displays with content &apos;Balance Details for Account Number&apos;<br/>
+<br />
+                        2016-09-30 21:23:39,441 INFO&nbsp; Demo_01_LiveGuru99 - ===PASSED===<br/>
+<br />
+                        2016-09-30 21:23:39,441 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_007 - Step 05: Verify &apos;BALANCE&apos; equal 30,000<br/>
+<br />
+            </div>
+
+</body>
+</html>

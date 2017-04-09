@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[2016-10-09 15:18:40,750 INFO  Demo_01_LiveGuru99 - Pre-condition - Step 01: Login to HomePage
+]]>
+    </line>
+    <line>
+      <![CDATA[2016-10-09 15:18:42,266 INFO  Demo_01_LiveGuru99 - DemoGuru_001 - Step 01: Go to New Customer page
+]]>
+    </line>
+    <line>
+      <![CDATA[2016-10-09 15:18:44,760 INFO  Demo_01_LiveGuru99 - DemoGuru_001 - Step 02: Input 'CUSTOMER NAME'
+]]>
+    </line>
+    <line>
+      <![CDATA[2016-10-09 15:18:46,020 INFO  Demo_01_LiveGuru99 - DemoGuru_001 - Step 04: Input 'ADDRESS'
+]]>
+    </line>
+    <line>
+      <![CDATA[2016-10-09 15:18:47,287 INFO  Demo_01_LiveGuru99 - DemoGuru_001 - Step 05: Input 'CITY'
+]]>
+    </line>
+    <line>
+      <![CDATA[2016-10-09 15:18:48,484 INFO  Demo_01_LiveGuru99 - DemoGuru_001 - Step 06: Input 'STATE'
+]]>
+    </line>
+    <line>
+      <![CDATA[2016-10-09 15:18:49,682 INFO  Demo_01_LiveGuru99 - DemoGuru_001 - Step 07: Input 'PIN'
+]]>
+    </line>
+    <line>
+      <![CDATA[2016-10-09 15:18:50,890 INFO  Demo_01_LiveGuru99 - DemoGuru_001 - Step 08: Input 'MOBILE'
+]]>
+    </line>
+    <line>
+      <![CDATA[2016-10-09 15:18:52,097 INFO  Demo_01_LiveGuru99 - DemoGuru_001 - Step 09: Input 'EMAIL'
+]]>
+    </line>
+    <line>
+      <![CDATA[2016-10-09 15:18:53,313 INFO  Demo_01_LiveGuru99 - DemoGuru_001 - Step 10: Input 'PASSWORD'
+]]>
+    </line>
+  </reporter-output>
+  <suite name="LiveGuru99" duration-ms="31010" started-at="2016-10-09T08:18:25Z" finished-at="2016-10-09T08:18:56Z">
+    <groups>
+      <group name="regression">
+        <method signature="Demo_01_LiveGuru99.DemoGuru_001_CreateNewCustomerAccountAndGetCustomerID()[pri:0, instance:com.liveguru99.demo.Demo_01_LiveGuru99@57fffcd7]" name="DemoGuru_001_CreateNewCustomerAccountAndGetCustomerID" class="com.liveguru99.demo.Demo_01_LiveGuru99"/>
+      </group> <!-- regression -->
+    </groups>
+    <test name="Run on Chrome" duration-ms="31010" started-at="2016-10-09T08:18:25Z" finished-at="2016-10-09T08:18:56Z">
+      <class name="com.liveguru99.demo.Demo_01_LiveGuru99">
+        <test-method status="PASS" signature="setup(java.lang.String, java.lang.String)[pri:0, instance:com.liveguru99.demo.Demo_01_LiveGuru99@57fffcd7]" name="setup" is-config="true" duration-ms="16341" started-at="2016-10-09T15:18:25Z" finished-at="2016-10-09T15:18:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://demo.guru99.com/V4/index.php]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[2016-10-09 15:18:40,750 INFO  Demo_01_LiveGuru99 - Pre-condition - Step 01: Login to HomePage
+]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="DemoGuru_001_CreateNewCustomerAccountAndGetCustomerID()[pri:0, instance:com.liveguru99.demo.Demo_01_LiveGuru99@57fffcd7]" name="DemoGuru_001_CreateNewCustomerAccountAndGetCustomerID" duration-ms="12288" started-at="2016-10-09T15:18:42Z" description="Create New Customer Account and get Customer ID" finished-at="2016-10-09T15:18:54Z">
+          <reporter-output>
+            <line>
+              <![CDATA[2016-10-09 15:18:42,266 INFO  Demo_01_LiveGuru99 - DemoGuru_001 - Step 01: Go to New Customer page
+]]>
+            </line>
+            <line>
+              <![CDATA[2016-10-09 15:18:44,760 INFO  Demo_01_LiveGuru99 - DemoGuru_001 - Step 02: Input 'CUSTOMER NAME'
+]]>
+            </line>
+            <line>
+              <![CDATA[2016-10-09 15:18:46,020 INFO  Demo_01_LiveGuru99 - DemoGuru_001 - Step 04: Input 'ADDRESS'
+]]>
+            </line>
+            <line>
+              <![CDATA[2016-10-09 15:18:47,287 INFO  Demo_01_LiveGuru99 - DemoGuru_001 - Step 05: Input 'CITY'
+]]>
+            </line>
+            <line>
+              <![CDATA[2016-10-09 15:18:48,484 INFO  Demo_01_LiveGuru99 - DemoGuru_001 - Step 06: Input 'STATE'
+]]>
+            </line>
+            <line>
+              <![CDATA[2016-10-09 15:18:49,682 INFO  Demo_01_LiveGuru99 - DemoGuru_001 - Step 07: Input 'PIN'
+]]>
+            </line>
+            <line>
+              <![CDATA[2016-10-09 15:18:50,890 INFO  Demo_01_LiveGuru99 - DemoGuru_001 - Step 08: Input 'MOBILE'
+]]>
+            </line>
+            <line>
+              <![CDATA[2016-10-09 15:18:52,097 INFO  Demo_01_LiveGuru99 - DemoGuru_001 - Step 09: Input 'EMAIL'
+]]>
+            </line>
+            <line>
+              <![CDATA[2016-10-09 15:18:53,313 INFO  Demo_01_LiveGuru99 - DemoGuru_001 - Step 10: Input 'PASSWORD'
+]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- DemoGuru_001_CreateNewCustomerAccountAndGetCustomerID -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.liveguru99.demo.Demo_01_LiveGuru99@57fffcd7]" name="tearDown" is-config="true" duration-ms="2244" started-at="2016-10-09T15:18:54Z" finished-at="2016-10-09T15:18:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.liveguru99.demo.Demo_01_LiveGuru99 -->
+    </test> <!-- Run on Chrome -->
+  </suite> <!-- LiveGuru99 -->
+</testng-results>

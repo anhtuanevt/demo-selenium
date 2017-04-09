@@ -1,0 +1,926 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Test Results Report</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="description" content="Test results report" />
+<script type="text/javascript" src="reportng.js"></script>
+<script langauge="JavaScript" type="text/javascript">
+function clickHandler(e) {
+ trElement = e.parentNode.parentNode;
+ obj = trElement.getElementsByTagName('div').item(0); 
+ if (obj.style.display=="none") {
+  obj.style.display="block";
+ }
+ else {
+  obj.style.display="none";
+ }
+}
+</script>
+<style type="text/css">
+* {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	color: #006699;
+}
+
+a:visited {
+	color: #003366;
+}
+
+body {
+	font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
+	line-height: 1.8em;
+	font-size: 62.5%;
+	margin: 1.8em 1em;
+}
+
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 2.7em;
+	margin-bottom: 0.6667em;
+}
+
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 1.8em;
+	margin-bottom: 0;
+	margin-top: 2em;
+}
+
+p {
+	font-size: 1.3em;
+}
+
+td {
+	font-size: 1.3em;
+}
+
+.header {
+	font-size: 1.4em;
+	font-weight: bold;
+	text-align: left;
+}
+
+.passed {
+	background-color: #44aa44;
+}
+
+.skipped {
+	background-color: #ffaa00;
+}
+
+.failed {
+	background-color: #ff4444;
+}
+
+.failedConfig {
+	background-color: #800000;
+	color: #ffffff
+}
+
+.skippedConfig {
+	background-color: #cc6600;
+	color: #ffffff
+}
+
+.totalLabel {
+	font-weight: bold;
+	background-color: #ffffff;
+}
+
+.suite {
+	background-color: #ccc;
+	font-weight: bold;
+}
+
+.test {
+	background-color: #eeeeee;
+	padding-left: 2em;
+}
+
+.test .passed {
+	background-color: #88ee88;
+}
+
+.test .skipped {
+	background-color: #ffff77;
+}
+
+.test .failed {
+	background-color: #ff8888;
+}
+
+.group {
+	background-color: #cccccc;
+	color: #000000;
+	font-weight: bold;
+}
+
+.suiteLinks {
+	float: right;
+	font-weight: normal;
+	vertical-align: middle;
+}
+
+.suiteLinks a {
+	color: #ffffff;
+	margin-left: .5em;
+}
+
+.passRate {
+	font-weight: bold;
+	text-align: right;
+}
+
+.duration {
+	text-align: right;
+}
+
+.thread {
+	white-space: nowrap;
+}
+
+.resultsTable {
+	border: 0;
+	width: 100%;
+	margin-top: 1.8em;
+	line-height: 1.7em;
+	border-spacing: 0.1em;
+}
+
+.resultsTable .method {
+	width: 18em;
+}
+
+.resultsTable .duration {
+	width: 6em;
+}
+
+.resultsTable td {
+	vertical-align: top;
+	padding: 0 1em;
+}
+
+.resultsTable th {
+	padding: 0 .5em;
+}
+
+.number {
+	text-align: right;
+}
+
+.zero {
+	font-weight: normal;
+}
+
+.columnHeadings {
+	font-size: 1em;
+}
+
+.columnHeadings th {
+	font-weight: normal;
+}
+
+.configTable {
+	border: 1px solid #800000;
+	color: #800000;
+	margin-bottom: 1.5em;
+}
+
+#sidebarHeader {
+	padding: 1.8em 1em;
+	margin: 0 -1em 1.8em -1em;
+}
+
+#suites {
+	line-height: 1.7em;
+	border-spacing: 0.1em;
+	width: 100%;
+}
+
+.tests {
+	display: table-row-group;
+}
+
+.header.suite {
+	cursor: pointer;
+	clear: right;
+	height: 1.214em;
+	margin-top: 1px;
+}
+
+div.test {
+	margin-top: 0.1em;
+	clear: right;
+	font-size: 1.3em;
+}
+
+/* The +/- toggle used in the navigation frame. */
+.toggle {
+	font-family: monospace;
+	font-weight: bold;
+	padding-left: 2px;
+	padding-right: 5px;
+	color: #777777;
+}
+
+.successIndicator {
+	float: right;
+	font-family: monospace;
+	font-weight: bold;
+	padding-right: 2px;
+	color: #44aa44;
+}
+
+.skipIndicator {
+	float: right;
+	font-family: monospace;
+	font-weight: bold;
+	padding-right: 2px;
+	color: #ffaa00;
+}
+
+.failureIndicator {
+	float: right;
+	font-family: monospace;
+	font-weight: bold;
+	padding-right: 2px;
+	color: #ff4444;
+}
+
+/* These classes are for information about an individual test result. */
+.result {
+	font-size: 1.1em;
+	vertical-align: middle;
+}
+
+.dependency {
+	font-family: Lucida Console, Monaco, Courier New, monospace;
+	font-weight: bold;
+}
+
+.arguments {
+	font-family: Lucida Console, Monaco, Courier New, monospace;
+	font-weight: bold;
+}
+
+.testOutput {
+	font-family: Lucida Console, Monaco, Courier New, monospace;
+	color: #666666;
+}
+
+.stackTrace {
+	font-size: 0.9em;
+	line-height: 1.2em;
+	margin-left: 2em;
+	display: none;
+}
+
+.stackTrace .stackTrace {
+	font-size: inherit;
+}
+
+.description {
+	border-bottom: 1px dotted #006699;
+}
+
+#meta {
+	font-size: 1em;
+	text-align: right;
+	float: right;
+}
+
+#systemInfo {
+	color: #666666;
+}
+
+/* Reporter log output (individual test ouput is style by "testOutput" above). */
+#log {
+	font-family: Lucida Console, Monaco, Courier New, monospace;
+	font-size: 1.3em;
+	margin-top: 1.8em;
+}
+
+.overviewTable {
+	width: 100%;
+	margin-top: 1.8em;
+	line-height: 1.7em;
+	border-spacing: 0.1em;
+}
+
+.overviewTable td {
+	padding: 0 1em;
+}
+
+.overviewTable th {
+	padding: 0 .5em;
+}
+
+.overviewTable .duration {
+	width: 6em;
+}
+
+.overviewTable .passRate {
+	width: 6em;
+}
+
+.overviewTable .number {
+	width: 5em;
+}
+
+.overviewTable tr {
+	height: 1.6em;
+}
+</style>
+</head>
+<body>
+
+<script language="javascript" type="text/javascript">
+function toggle(elementID){
+var target1 = document.getElementById(elementID)
+if (target1.style.display == 'none') {
+target1.style.display = 'block'
+} else {
+target1.style.display = 'none'
+}
+}
+</script>
+
+
+	<div id="meta">
+		Generated by <a href="http://www.testng.org" target="_top">TestNG</a> with <a href="http://reportng.dev.java.net" target="_top">ReportNG</a>
+  		at 21:21 ICT on Th? sáu 30 tháng chín 2016
+  		<br /><span id="systemInfo">Administrator@DamDM&nbsp;/&nbsp;Java 1.8.0_91 (Oracle Corporation)&nbsp;/&nbsp;Windows 10 10.0 (amd64)</span>
+	</div>
+
+	<h1>Test Results Report</h1>
+	<div>truong</div>
+
+		<table class="overviewTable">
+	  	  <tr>
+	    <th colspan="8" class="header suite">
+	      LiveGuru99
+	    </th>
+	  </tr>
+	  <tr class="columnHeadings">
+	    <td>Test</td>
+	    <th>Duration</th>
+	    <th>Passed</th>
+	    <th>Skipped</th>
+	    <th>Failed</th>
+	    <th>Pass Rate</th>
+	  </tr>
+	  	
+	  <tr class="test">
+	    <td class="test">
+	      <a href="#1">Run on Firefox</a>
+	    </td>
+	    <td class="duration">
+	      157,970s
+	    </td>
+	
+	    	    <td class="passed number">5</td>
+	    	
+	    	    <td class="zero number">0</td>
+	    	
+	    	    <td class="failed number">2</td>
+	    	
+	    <td class="passRate">
+	      	      71%
+	      	    </td>
+	    
+	    <td></td>
+			
+		<td></td>
+	  </tr>
+	  	
+	  <tr class="suite">
+	    <td class="totalLabel">Total</td>
+	    
+	    <td class="duration"></td>
+	
+	    	    <td class="passed number">5</td>
+	    	
+	    	    <td class="zero number">0</td>
+	    	
+	    	    <td class="failed number">2</td>
+	    	
+	    <td class="passRate suite">
+	      	      71%
+	      	    </td>
+	    
+	   	<td></td>
+			
+		<td></td>
+	
+	  </tr>
+	</table>
+	
+
+	<a id="{#$velocityCount}"></a>
+<h2>Run on Firefox</h2>
+<p>
+  Test duration: 157,970s
+</p>
+<script type="text/javascript" src="reportng.js"></script>
+
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">com.liveguru99.demo.Demo_01_LiveGuru99</td>
+      </tr>
+            
+<tr>
+
+  <td class="method">
+    <a href="#" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="Transfer the money into another account and check amount equal 10,000">DemoGuru_006_TransferTheMoneyIntoOtherAccountAccountAndCheckAmountEqual10000</span>
+         </a>
+  </td>
+
+  <td class="duration">
+    71,226s
+  </td>
+  <td class="result">
+        
+               
+
+     <div id=DemoGuru_006_TransferTheMoneyIntoOtherAccountAccountAndCheckAmountEqual10000 class="testOutput" style="display: none;">
+                           2016-09-30 21:22:20,493 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_006 - Step 01: Go to Fund Transfer page<br/>
+<br />
+                                    2016-09-30 21:22:23,426 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_006 - Step 02: Input &apos;PAYER ACCOUNT NUMBER&apos;<br/>
+<br />
+                                    2016-09-30 21:22:24,743 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_006 - Step 03: Input &apos;PAYEER ACCOUNT NUMBER&apos;<br/>
+<br />
+                                    2016-09-30 21:22:26,028 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_006 - Step 04: Input &apos;AMOUNT&apos;<br/>
+<br />
+                                    2016-09-30 21:22:27,343 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_006 - Step 05: Input &apos;DESCRIPTION&apos;<br/>
+<br />
+                                    2016-09-30 21:22:28,688 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_006 - Step 06: Click &apos;SUBMIT&apos; button<br/>
+<br />
+                                    2016-09-30 21:22:30,167 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_006 - Step 07: Verify message displays with content &apos;Fund Transfer Details&apos;<br/>
+<br />
+                                    2016-09-30 21:22:44,752 INFO&nbsp; Demo_01_LiveGuru99 - ===FAILED===<br/>
+<br />
+                                    2016-09-30 21:22:44,753 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_006 - Step 08: Verify &apos;AMOUNT&apos; equal 10,000<br/>
+<br />
+                     </div>
+     
+
+
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.Throwable: Mulitple failures (3):<br/>
+Failure 1 of 3<br/>
+java.lang.AssertionError: expected [true] but found [false]<br/>
+	at org.testng.Assert.fail(Assert.java:94)<br/>
+	at org.testng.Assert.failNotEquals(Assert.java:513)<br/>
+	at org.testng.Assert.assertTrue(Assert.java:42)<br/>
+	at org.testng.Assert.assertTrue(Assert.java:52)<br/>
+	at common.AbstractTest.verifyTrue(AbstractTest.java:90)<br/>
+	at common.AbstractTest.verifyTrue(AbstractTest.java:103)<br/>
+	at com.liveguru99.demo.Demo_01_LiveGuru99.DemoGuru_006_TransferTheMoneyIntoOtherAccountAccountAndCheckAmountEqual10000(Demo_01_LiveGuru99.java:245)<br/>
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br/>
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br/>
+	at java.lang.reflect.Method.invoke(Unknown Source)<br/>
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)<br/>
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)<br/>
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:822)<br/>
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1130)<br/>
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br/>
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br/>
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)<br/>
+	at org.testng.TestRunner.run(TestRunner.java:632)<br/>
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)<br/>
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)<br/>
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)<br/>
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)<br/>
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br/>
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br/>
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)<br/>
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)<br/>
+	at org.testng.TestNG.run(TestNG.java:1064)<br/>
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)<br/>
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)<br/>
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)<br/>
+<br/>
+Failure 2 of 3<br/>
+java.lang.AssertionError: expected [10000] but found [null]<br/>
+	at org.testng.Assert.fail(Assert.java:94)<br/>
+	at org.testng.Assert.failNotEquals(Assert.java:513)<br/>
+	at org.testng.Assert.assertEqualsImpl(Assert.java:130)<br/>
+	at org.testng.Assert.assertEquals(Assert.java:116)<br/>
+	at org.testng.Assert.assertEquals(Assert.java:179)<br/>
+	at common.AbstractTest.verifyEquals(AbstractTest.java:134)<br/>
+	at common.AbstractTest.verifyEquals(AbstractTest.java:147)<br/>
+	at com.liveguru99.demo.Demo_01_LiveGuru99.DemoGuru_006_TransferTheMoneyIntoOtherAccountAccountAndCheckAmountEqual10000(Demo_01_LiveGuru99.java:249)<br/>
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br/>
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br/>
+	at java.lang.reflect.Method.invoke(Unknown Source)<br/>
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)<br/>
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)<br/>
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:822)<br/>
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1130)<br/>
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br/>
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br/>
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)<br/>
+	at org.testng.TestRunner.run(TestRunner.java:632)<br/>
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)<br/>
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)<br/>
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)<br/>
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)<br/>
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br/>
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br/>
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)<br/>
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)<br/>
+	at org.testng.TestNG.run(TestNG.java:1064)<br/>
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)<br/>
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)<br/>
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)<br/>
+<br/>
+Failure 3 of 3<br/>
+java.lang.AssertionError: expected [10000] but found [null]</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              org.testng.Assert.fail(Assert.java:94)<br />
+              org.testng.Assert.failNotEquals(Assert.java:513)<br />
+              org.testng.Assert.assertEqualsImpl(Assert.java:130)<br />
+              org.testng.Assert.assertEquals(Assert.java:116)<br />
+              org.testng.Assert.assertEquals(Assert.java:179)<br />
+              common.AbstractTest.verifyEquals(AbstractTest.java:134)<br />
+              common.AbstractTest.verifyEquals(AbstractTest.java:147)<br />
+              com.liveguru99.demo.Demo_01_LiveGuru99.DemoGuru_006_TransferTheMoneyIntoOtherAccountAccountAndCheckAmountEqual10000(Demo_01_LiveGuru99.java:249)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br />
+              java.lang.reflect.Method.invoke(Unknown Source)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:645)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:822)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1130)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:782)<br />
+              org.testng.TestRunner.run(TestRunner.java:632)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:366)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:268)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1169)<br />
+              org.testng.TestNG.run(TestNG.java:1064)<br />
+              org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="#" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="Check current account balance equal 30,000">DemoGuru_007_CheckCurrentAccountBalanceEqual30000</span>
+         </a>
+  </td>
+
+  <td class="duration">
+    7,863s
+  </td>
+  <td class="result">
+        
+               
+
+     <div id=DemoGuru_007_CheckCurrentAccountBalanceEqual30000 class="testOutput" style="display: none;">
+                           2016-09-30 21:23:31,763 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_007 - Step 01: Go to Balance Enquiry page<br/>
+<br />
+                                    2016-09-30 21:23:34,959 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_007 - Step 02: Input &apos;ACCOUNT NUMBER&apos;<br/>
+<br />
+                                    2016-09-30 21:23:36,299 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_007 - Step 03: Click &apos;SUBMIT&apos; button<br/>
+<br />
+                                    2016-09-30 21:23:39,292 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_007 - Step 04: Verify message displays with content &apos;Balance Details for Account Number&apos;<br/>
+<br />
+                                    2016-09-30 21:23:39,441 INFO&nbsp; Demo_01_LiveGuru99 - ===PASSED===<br/>
+<br />
+                                    2016-09-30 21:23:39,441 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_007 - Step 05: Verify &apos;BALANCE&apos; equal 30,000<br/>
+<br />
+                     </div>
+     
+
+
+        <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse"><b>java.lang.Throwable: Mulitple failures (2):<br/>
+Failure 1 of 2<br/>
+java.lang.AssertionError: expected [30000] but found [39656]<br/>
+	at org.testng.Assert.fail(Assert.java:94)<br/>
+	at org.testng.Assert.failNotEquals(Assert.java:513)<br/>
+	at org.testng.Assert.assertEqualsImpl(Assert.java:135)<br/>
+	at org.testng.Assert.assertEquals(Assert.java:116)<br/>
+	at org.testng.Assert.assertEquals(Assert.java:179)<br/>
+	at common.AbstractTest.verifyEquals(AbstractTest.java:134)<br/>
+	at common.AbstractTest.verifyEquals(AbstractTest.java:147)<br/>
+	at com.liveguru99.demo.Demo_01_LiveGuru99.DemoGuru_007_CheckCurrentAccountBalanceEqual30000(Demo_01_LiveGuru99.java:268)<br/>
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br/>
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br/>
+	at java.lang.reflect.Method.invoke(Unknown Source)<br/>
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)<br/>
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)<br/>
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:822)<br/>
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1130)<br/>
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br/>
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br/>
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)<br/>
+	at org.testng.TestRunner.run(TestRunner.java:632)<br/>
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)<br/>
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)<br/>
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)<br/>
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)<br/>
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br/>
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br/>
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)<br/>
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)<br/>
+	at org.testng.TestNG.run(TestNG.java:1064)<br/>
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)<br/>
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)<br/>
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)<br/>
+<br/>
+Failure 2 of 2<br/>
+java.lang.AssertionError: expected [30000] but found [39656]</b></a><br />
+    <div class="stackTrace" id="exception-1">
+              org.testng.Assert.fail(Assert.java:94)<br />
+              org.testng.Assert.failNotEquals(Assert.java:513)<br />
+              org.testng.Assert.assertEqualsImpl(Assert.java:135)<br />
+              org.testng.Assert.assertEquals(Assert.java:116)<br />
+              org.testng.Assert.assertEquals(Assert.java:179)<br />
+              common.AbstractTest.verifyEquals(AbstractTest.java:134)<br />
+              common.AbstractTest.verifyEquals(AbstractTest.java:147)<br />
+              com.liveguru99.demo.Demo_01_LiveGuru99.DemoGuru_007_CheckCurrentAccountBalanceEqual30000(Demo_01_LiveGuru99.java:268)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br />
+              java.lang.reflect.Method.invoke(Unknown Source)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:645)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:822)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1130)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:782)<br />
+              org.testng.TestRunner.run(TestRunner.java:632)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:366)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:268)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1169)<br />
+              org.testng.TestNG.run(TestNG.java:1064)<br />
+              org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:113)<br />
+              org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:206)<br />
+              org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:177)<br />
+                </div>
+      </td>
+</tr>
+      </table>
+
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">com.liveguru99.demo.Demo_01_LiveGuru99</td>
+      </tr>
+            
+<tr>
+
+  <td class="method">
+    <a href="#" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="Create New Customer Account and get Customer ID">DemoGuru_001_CreateNewCustomerAccountAndGetCustomerID</span>
+         </a>
+  </td>
+
+  <td class="duration">
+    19,095s
+  </td>
+  <td class="result">
+        
+               
+
+     <div id=DemoGuru_001_CreateNewCustomerAccountAndGetCustomerID class="testOutput" style="display: none;">
+                           2016-09-30 21:21:20,266 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 01: Go to New Customer page<br/>
+<br />
+                                    2016-09-30 21:21:23,819 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 02: Input &apos;CUSTOMER NAME&apos;<br/>
+<br />
+                                    2016-09-30 21:21:25,167 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 03: Input &apos;DATE OF BIRTH&apos;<br/>
+<br />
+                                    2016-09-30 21:21:26,466 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 04: Input &apos;ADDRESS&apos;<br/>
+<br />
+                                    2016-09-30 21:21:27,873 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 05: Input &apos;CITY&apos;<br/>
+<br />
+                                    2016-09-30 21:21:29,127 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 06: Input &apos;STATE&apos;<br/>
+<br />
+                                    2016-09-30 21:21:30,461 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 07: Input &apos;PIN&apos;<br/>
+<br />
+                                    2016-09-30 21:21:31,779 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 08: Input &apos;MOBILE&apos;<br/>
+<br />
+                                    2016-09-30 21:21:33,121 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 09: Input &apos;EMAIL&apos;<br/>
+<br />
+                                    2016-09-30 21:21:34,456 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 10: Input &apos;PASSWORD&apos;<br/>
+<br />
+                                    2016-09-30 21:21:35,760 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 11: Select &apos;GENDER&apos;<br/>
+<br />
+                                    2016-09-30 21:21:37,270 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 12: Click &apos;SUBMIT&apos; button<br/>
+<br />
+                                    2016-09-30 21:21:38,941 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 13: Verify message displays with content &apos;Customer Registered Successfully!!!&apos;<br/>
+<br />
+                                    2016-09-30 21:21:39,074 INFO&nbsp; Demo_01_LiveGuru99 - ===PASSED===<br/>
+<br />
+                                    2016-09-30 21:21:39,136 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_001 - Step 14: Get value &apos;CUSTOMER ID&apos;<br/>
+<br />
+                     </div>
+     
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="#" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="Edit customer account and check edited successfully">DemoGuru_002_EditCustomerAccountAndCheckEditSuccessfull</span>
+         </a>
+  </td>
+
+  <td class="duration">
+    14,932s
+  </td>
+  <td class="result">
+        
+               
+
+     <div id=DemoGuru_002_EditCustomerAccountAndCheckEditSuccessfull class="testOutput" style="display: none;">
+                           2016-09-30 21:21:39,340 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_002 - Step 01: Go to Edit Customer page<br/>
+<br />
+                                    2016-09-30 21:21:42,192 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_002 - Step 02: Input &apos;CUSTOMER NAME&apos;<br/>
+<br />
+                                    2016-09-30 21:21:43,562 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_002 - Step 03: Click &apos;SUBMIT&apos; button<br/>
+<br />
+                                    2016-09-30 21:21:44,589 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_002 - Step 04: Input &apos;ADDRESS&apos;<br/>
+<br />
+                                    2016-09-30 21:21:45,917 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_002 - Step 05: Input &apos;CITY&apos;<br/>
+<br />
+                                    2016-09-30 21:21:47,257 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_002 - Step 06: Input &apos;STATE&apos;<br/>
+<br />
+                                    2016-09-30 21:21:48,539 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_002 - Step 07: Input &apos;PIN&apos;<br/>
+<br />
+                                    2016-09-30 21:21:49,928 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_002 - Step 08: Input &apos;MOBILE&apos;<br/>
+<br />
+                                    2016-09-30 21:21:51,233 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_002 - Step 09: Input &apos;EMAIL&apos;<br/>
+<br />
+                                    2016-09-30 21:21:52,579 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_002 - Step 10: Click &apos;SUBMIT&apos; button<br/>
+<br />
+                                    2016-09-30 21:21:54,131 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_002 - Step 11: Verify message displays with content &apos;Customer details updated Successfully!!!&apos;<br/>
+<br />
+                                    2016-09-30 21:21:54,270 INFO&nbsp; Demo_01_LiveGuru99 - ===PASSED===<br/>
+<br />
+                     </div>
+     
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="#" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="Add new account and check created successfully, then verify 'Current Amount' and 'Initial Deposit' are equal">DemoGuru_003_AddNewAccountAndGetAccountID</span>
+         </a>
+  </td>
+
+  <td class="duration">
+    7,816s
+  </td>
+  <td class="result">
+        
+               
+
+     <div id=DemoGuru_003_AddNewAccountAndGetAccountID class="testOutput" style="display: none;">
+                           2016-09-30 21:21:54,273 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_003 - Step 01: Go to New Account page<br/>
+<br />
+                                    2016-09-30 21:21:56,933 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_003 - Step 02: Input &apos;CUSTOMER NAME&apos;<br/>
+<br />
+                                    2016-09-30 21:21:58,271 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_003 - Step 03: Select &apos;CUSTOMER NAME&apos;<br/>
+<br />
+                                    2016-09-30 21:21:58,700 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_003 - Step 04: Input &apos;INITIAL DEPOSIT&apos;<br/>
+<br />
+                                    2016-09-30 21:21:59,979 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_003 - Step 05: Click &apos;SUBMIT&apos; button<br/>
+<br />
+                                    2016-09-30 21:22:01,534 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_003 - Step 06: Verify message displays with content &apos;Account Generated Successfully!!!&apos;<br/>
+<br />
+                                    2016-09-30 21:22:01,691 INFO&nbsp; Demo_01_LiveGuru99 - ===PASSED===<br/>
+<br />
+                                    2016-09-30 21:22:01,692 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_003 - Step 07: Get value &apos;ACCOUNT ID&apos;<br/>
+<br />
+                                    2016-09-30 21:22:01,894 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_003 - Step 08: Verify &apos;CURRENT AMOUNT&apos; and &apos;INITIAL DEPOSIT&apos; are equal<br/>
+<br />
+                     </div>
+     
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="#" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="Transfer money into a current account and check account balance equal 55,000">DemoGuru_004_TransferMoneyIntoCurrentAccountAndCheckAccountBalanceEqual50000</span>
+         </a>
+  </td>
+
+  <td class="duration">
+    8,709s
+  </td>
+  <td class="result">
+        
+               
+
+     <div id=DemoGuru_004_TransferMoneyIntoCurrentAccountAndCheckAccountBalanceEqual50000 class="testOutput" style="display: none;">
+                           2016-09-30 21:22:02,090 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_004 - Step 01: Go to Deposit page<br/>
+<br />
+                                    2016-09-30 21:22:04,956 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_004 - Step 02: Input &apos;ACCOUNT NUMBER&apos;<br/>
+<br />
+                                    2016-09-30 21:22:06,267 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_004 - Step 03: Input &apos;AMOUNT&apos;<br/>
+<br />
+                                    2016-09-30 21:22:07,587 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_004 - Step 04: Input &apos;DESCRIPTION&apos;<br/>
+<br />
+                                    2016-09-30 21:22:08,986 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_004 - Step 05: Click &apos;SUBMIT&apos; button<br/>
+<br />
+                                    2016-09-30 21:22:10,262 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_004 - Step 06: Verify message displays with content &apos;Transaction details of Deposit for Account Number&apos;<br/>
+<br />
+                                    2016-09-30 21:22:10,417 INFO&nbsp; Demo_01_LiveGuru99 - ===PASSED===<br/>
+<br />
+                                    2016-09-30 21:22:10,417 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_004 - Step 07: Verify &apos;AMOUNT CREDITED&apos; equal 5,000<br/>
+<br />
+                                    2016-09-30 21:22:10,610 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_004 - Step 08: Verify &apos;CURRENT BALANCE&apos; equal 55,000<br/>
+<br />
+                     </div>
+     
+
+
+      </td>
+</tr>
+<tr>
+
+  <td class="method">
+    <a href="#" onclick="clickHandler(this);" title="Click to expand/collapse">
+                  <span class="description" title="Withdraw money from current account and check account balance equal 40,000">DemoGuru_005_WithdrawMoneyFromCurrentAccountAndCheckAccountBalanceEqual40000</span>
+         </a>
+  </td>
+
+  <td class="duration">
+    9,692s
+  </td>
+  <td class="result">
+        
+               
+
+     <div id=DemoGuru_005_WithdrawMoneyFromCurrentAccountAndCheckAccountBalanceEqual40000 class="testOutput" style="display: none;">
+                           2016-09-30 21:22:10,800 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_005 - Step 01: Go to Withdrawal page<br/>
+<br />
+                                    2016-09-30 21:22:13,716 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_005 - Step 02: Input &apos;ACCOUNT NUMBER&apos;<br/>
+<br />
+                                    2016-09-30 21:22:15,216 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_005 - Step 03: Input &apos;AMOUNT&apos;<br/>
+<br />
+                                    2016-09-30 21:22:16,551 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_005 - Step 04: Input &apos;DESCRIPTION&apos;<br/>
+<br />
+                                    2016-09-30 21:22:17,873 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_005 - Step 05: Click &apos;SUBMIT&apos; button<br/>
+<br />
+                                    2016-09-30 21:22:19,556 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_005 - Step 06: Verify message displays with content &apos;Transaction details of Withdrawal for Account number&apos;<br/>
+<br />
+                                    2016-09-30 21:22:19,739 INFO&nbsp; Demo_01_LiveGuru99 - ===PASSED===<br/>
+<br />
+                                    2016-09-30 21:22:19,739 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_005 - Step 07: Verify &apos;AMOUNT CREDITED&apos; equal 15,000<br/>
+<br />
+                                    2016-09-30 21:22:20,136 INFO&nbsp; Demo_01_LiveGuru99 - DemoGuru_005 - Step 08: Verify &apos;CURRENT BALANCE&apos; equal 40,000<br/>
+<br />
+                     </div>
+     
+
+
+      </td>
+</tr>
+      </table>
+
+
+	<!-- @author: vu.anh.nguyen@logigear.com 13 Oct, 2011 -->
+	<!-- @author: truong.pham@logigear.com 26 Step, 2013 -->	
+	
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.liveguru99.demo.Demo_01_LiveGuru99">
+        <methods>
+          <include name="DemoGuru_002_EditCustomerAccountAndCheckEditSuccessfull"/>
+          <include name="DemoGuru_005_WithdrawMoneyFromCurrentAccountAndCheckAccountBalanceEqual40000"/>
+          <include name="DemoGuru_004_TransferMoneyIntoCurrentAccountAndCheckAccountBalanceEqual50000"/>
+          <include name="DemoGuru_007_CheckCurrentAccountBalanceEqual30000"/>
+          <include name="DemoGuru_006_TransferTheMoneyIntoOtherAccountAccountAndCheckAmountEqual10000"/>
+          <include name="DemoGuru_001_CreateNewCustomerAccountAndGetCustomerID"/>
+          <include name="DemoGuru_003_AddNewAccountAndGetAccountID"/>
+        </methods>
+      </class> <!-- com.liveguru99.demo.Demo_01_LiveGuru99 -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

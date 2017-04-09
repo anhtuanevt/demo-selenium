@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="7" failed="0" total="7" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="112" started-at="2017-04-06T09:54:34Z" finished-at="2017-04-06T09:54:34Z">
+    <groups>
+      <group name="regression">
+        <method signature="Demo_01_LiveGuru99.DemoGuru_001_CreateNewCustomerAccountAndGetCustomerID()[pri:0, instance:com.liveguru99.demo.Demo_01_LiveGuru99@91161c7]" name="DemoGuru_001_CreateNewCustomerAccountAndGetCustomerID" class="com.liveguru99.demo.Demo_01_LiveGuru99"/>
+        <method signature="Demo_01_LiveGuru99.DemoGuru_002_EditCustomerAccountAndCheckEditSuccessfull()[pri:0, instance:com.liveguru99.demo.Demo_01_LiveGuru99@91161c7]" name="DemoGuru_002_EditCustomerAccountAndCheckEditSuccessfull" class="com.liveguru99.demo.Demo_01_LiveGuru99"/>
+        <method signature="Demo_01_LiveGuru99.DemoGuru_003_AddNewAccountAndGetAccountID()[pri:0, instance:com.liveguru99.demo.Demo_01_LiveGuru99@91161c7]" name="DemoGuru_003_AddNewAccountAndGetAccountID" class="com.liveguru99.demo.Demo_01_LiveGuru99"/>
+        <method signature="Demo_01_LiveGuru99.DemoGuru_004_TransferMoneyIntoCurrentAccountAndCheckAccountBalanceEqual50000()[pri:0, instance:com.liveguru99.demo.Demo_01_LiveGuru99@91161c7]" name="DemoGuru_004_TransferMoneyIntoCurrentAccountAndCheckAccountBalanceEqual50000" class="com.liveguru99.demo.Demo_01_LiveGuru99"/>
+        <method signature="Demo_01_LiveGuru99.DemoGuru_005_WithdrawMoneyFromCurrentAccountAndCheckAccountBalanceEqual40000()[pri:0, instance:com.liveguru99.demo.Demo_01_LiveGuru99@91161c7]" name="DemoGuru_005_WithdrawMoneyFromCurrentAccountAndCheckAccountBalanceEqual40000" class="com.liveguru99.demo.Demo_01_LiveGuru99"/>
+        <method signature="Demo_01_LiveGuru99.DemoGuru_006_TransferTheMoneyIntoOtherAccountAccountAndCheckAmountEqual10000()[pri:0, instance:com.liveguru99.demo.Demo_01_LiveGuru99@91161c7]" name="DemoGuru_006_TransferTheMoneyIntoOtherAccountAccountAndCheckAmountEqual10000" class="com.liveguru99.demo.Demo_01_LiveGuru99"/>
+        <method signature="Demo_01_LiveGuru99.DemoGuru_007_CheckCurrentAccountBalanceEqual30000()[pri:0, instance:com.liveguru99.demo.Demo_01_LiveGuru99@91161c7]" name="DemoGuru_007_CheckCurrentAccountBalanceEqual30000" class="com.liveguru99.demo.Demo_01_LiveGuru99"/>
+      </group> <!-- regression -->
+    </groups>
+    <test name="Default test" duration-ms="112" started-at="2017-04-06T09:54:34Z" finished-at="2017-04-06T09:54:34Z">
+      <class name="com.liveguru99.demo.Demo_01_LiveGuru99">
+        <test-method status="FAIL" signature="setup(java.lang.String, java.lang.String)[pri:0, instance:com.liveguru99.demo.Demo_01_LiveGuru99@91161c7]" name="setup" is-config="true" duration-ms="0" started-at="2017-04-06T02:54:34Z" finished-at="2017-04-06T02:54:34Z">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Parameter 'browser' is required by @Configuration on method setup but has not been marked @Optional or defined
+in C:\Users\anh tuan\AppData\Local\Temp\testng-eclipse-596585838\testng-customsuite.xml]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Parameter 'browser' is required by @Configuration on method setup but has not been marked @Optional or defined
+in C:\Users\anh tuan\AppData\Local\Temp\testng-eclipse-596585838\testng-customsuite.xml
+	at org.testng.internal.Parameters.createParameters(Parameters.java:154)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:361)
+	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:84)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:197)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:170)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:104)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="SKIP" signature="DemoGuru_001_CreateNewCustomerAccountAndGetCustomerID()[pri:0, instance:com.liveguru99.demo.Demo_01_LiveGuru99@91161c7]" name="DemoGuru_001_CreateNewCustomerAccountAndGetCustomerID" duration-ms="14" started-at="2017-04-06T02:54:34Z" description="Create New Customer Account and get Customer ID" finished-at="2017-04-06T02:54:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DemoGuru_001_CreateNewCustomerAccountAndGetCustomerID -->
+        <test-method status="SKIP" signature="DemoGuru_002_EditCustomerAccountAndCheckEditSuccessfull()[pri:0, instance:com.liveguru99.demo.Demo_01_LiveGuru99@91161c7]" name="DemoGuru_002_EditCustomerAccountAndCheckEditSuccessfull" duration-ms="2" started-at="2017-04-06T02:54:34Z" description="Edit customer account and check edited successfully" finished-at="2017-04-06T02:54:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DemoGuru_002_EditCustomerAccountAndCheckEditSuccessfull -->
+        <test-method status="SKIP" signature="DemoGuru_003_AddNewAccountAndGetAccountID()[pri:0, instance:com.liveguru99.demo.Demo_01_LiveGuru99@91161c7]" name="DemoGuru_003_AddNewAccountAndGetAccountID" duration-ms="2" started-at="2017-04-06T02:54:34Z" description="Add new account and check created successfully, then verify &#039;Current Amount&#039; and &#039;Initial Deposit&#039; are equal" finished-at="2017-04-06T02:54:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DemoGuru_003_AddNewAccountAndGetAccountID -->
+        <test-method status="SKIP" signature="DemoGuru_004_TransferMoneyIntoCurrentAccountAndCheckAccountBalanceEqual50000()[pri:0, instance:com.liveguru99.demo.Demo_01_LiveGuru99@91161c7]" name="DemoGuru_004_TransferMoneyIntoCurrentAccountAndCheckAccountBalanceEqual50000" duration-ms="2" started-at="2017-04-06T02:54:34Z" description="Transfer money into a current account and check account balance equal 55,000" finished-at="2017-04-06T02:54:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DemoGuru_004_TransferMoneyIntoCurrentAccountAndCheckAccountBalanceEqual50000 -->
+        <test-method status="SKIP" signature="DemoGuru_005_WithdrawMoneyFromCurrentAccountAndCheckAccountBalanceEqual40000()[pri:0, instance:com.liveguru99.demo.Demo_01_LiveGuru99@91161c7]" name="DemoGuru_005_WithdrawMoneyFromCurrentAccountAndCheckAccountBalanceEqual40000" duration-ms="3" started-at="2017-04-06T02:54:34Z" description="Withdraw money from current account and check account balance equal 40,000" finished-at="2017-04-06T02:54:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DemoGuru_005_WithdrawMoneyFromCurrentAccountAndCheckAccountBalanceEqual40000 -->
+        <test-method status="SKIP" signature="DemoGuru_006_TransferTheMoneyIntoOtherAccountAccountAndCheckAmountEqual10000()[pri:0, instance:com.liveguru99.demo.Demo_01_LiveGuru99@91161c7]" name="DemoGuru_006_TransferTheMoneyIntoOtherAccountAccountAndCheckAmountEqual10000" duration-ms="5" started-at="2017-04-06T02:54:34Z" description="Transfer the money into another account and check amount equal 10,000" finished-at="2017-04-06T02:54:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DemoGuru_006_TransferTheMoneyIntoOtherAccountAccountAndCheckAmountEqual10000 -->
+        <test-method status="SKIP" signature="DemoGuru_007_CheckCurrentAccountBalanceEqual30000()[pri:0, instance:com.liveguru99.demo.Demo_01_LiveGuru99@91161c7]" name="DemoGuru_007_CheckCurrentAccountBalanceEqual30000" duration-ms="5" started-at="2017-04-06T02:54:34Z" description="Check current account balance equal 30,000" finished-at="2017-04-06T02:54:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DemoGuru_007_CheckCurrentAccountBalanceEqual30000 -->
+        <test-method status="SKIP" signature="tearDown()[pri:0, instance:com.liveguru99.demo.Demo_01_LiveGuru99@91161c7]" name="tearDown" is-config="true" duration-ms="0" started-at="2017-04-06T02:54:34Z" finished-at="2017-04-06T02:54:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.liveguru99.demo.Demo_01_LiveGuru99 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
